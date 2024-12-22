@@ -1,0 +1,15 @@
+{{ $language := .Get "language" }}
+{{ $source := .Get "source" }}
+{{ $options := .Get "options" }}
+{{ $title := .Get "title" }}
+
+{{ with .Page.Resources.GetMatch $source }}
+  <div class="highlight-wrapper">
+    <!--{{ if $title }} 
+      <div class="highlight-title">{{ $title }}</div>
+    {{ else }}
+      <div class="highlight-title">{{ path.Base $source }}</div>
+    {{ end }}-->
+    {{ highlight (trim .Content "\n\r") $language $options }}
+  </div>
+{{ end }}

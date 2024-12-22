@@ -36,9 +36,10 @@ params:
   comments: false
   hidemeta: false
   hideSummary: false
-  showtoc: false
+  showtoc: true
   tocopen: true
   ShowShareButtons: false
+  math: true
 
   assets:
     # disableHLJS: true # to disable highlight.js
@@ -72,7 +73,9 @@ params:
   # home-info mode
   homeInfoParams:
     Title: "xtrimi"
-    Content: hi thar
+    Content: |
+      hi thar \
+      **🚧 SITE UNDER CONSTRUCTION 🚧**
 
   socialIcons:
     - name: twitter
@@ -126,6 +129,21 @@ menu:
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
 markup:
+  goldmark:
+    parser:
+      attribute:
+        block: true
+      wrapStandAloneImageWithinParagraph: false
+    extensions:
+      passthrough:
+        delimiters:
+          block:
+          - - $$
+            - $$
+          inline:
+          - - \(
+            - \)
+        enable: true
   highlight:
     noClasses: false
     # anchorLineNos: true
