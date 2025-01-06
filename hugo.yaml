@@ -18,18 +18,18 @@ params:
   description: "xtrimi's blog"
   keywords: [Blog, Portfolio, PaperMod]
   author: Me
-  images: ["<link or path of image for opengraph, twitter-cards>"]
+  images: ["assets/img/icon.png"]
   DateFormat: "January 2, 2006"
   defaultTheme: dark # dark, light
   disableThemeToggle: true
 
-  ShowReadingTime: true
+  ShowReadingTime: false
   ShowShareButtons: true
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
   ShowCodeCopyButtons: false
-  ShowWordCount: true
-  ShowRssButtonInSectionTermList: true
+  ShowWordCount: false
+  ShowRssButtonInSectionTermList: false
   UseHugoToc: true
   disableSpecial1stPost: false
   disableScrollToTop: false
