@@ -1,0 +1,41 @@
+<!-- temporarily removed bc faulty-->
+
+<!--{{ $url := urls.Parse .Destination }}
+{{ $realDestination := replaceRE `\?.*$` "" .Destination }}-->
+
+{{ $image := .Page.Resources.GetMatch (printf "%s" (.Destination | safeURL)) }}
+
+{{ if not $image }}
+  {{ warnf "couldn't find resource for src: %s" (.Destination | safeURL) }}
+{{ else if and (ne "jpeg" $image.MediaType.SubType) (ne "png" $image.MediaType.SubType) }}
+  {{ warnf "src %s is a '%s', expected 'jpeg' or 'png'" (.Destination | safeURL) $image.MediaType.SubType }}
+{{ else }}
+  {{ $small := $image.Resize "480x" }}
+  {{ $medium := $image.Resize "768x" }}
+  {{ $big := $image.Resize "1024x" }}
+  {{ $alt := .PlainText | safeHTML }}
+  {{ $caption := "" }}
+  {{ with .Title }}
+    {{ $caption = . | safeHTML }}
+  {{ end }}
+
+  <!--{{ $style := $url.RawQuery }}
+  {{ if $style }}
+    {{ $style := replaceRE `&` "" (replaceRE `=` ": " $style) | printf "%s;" }}
+  {{ end }}-->
+
+  <figure>
+    <a href="{{ $image.RelPermalink }}">
+      <img
+        sizes="100vw"
+        srcset="{{ $small.RelPermalink }} 480w, {{ $medium.RelPermalink }} 768w, {{ $big.RelPermalink }} 1024w"
+        src="{{ $image.RelPermalink }}"
+        alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
+
+      >
+    </a>
+    {{ with $caption }}
+      <figcaption>{{ . | markdownify }}</figcaption>
+    {{ end }}
+  </figure>
+{{ end }}

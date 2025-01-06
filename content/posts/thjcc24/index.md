@@ -5,7 +5,6 @@ description: "writeup for THJCC CTF 2024"
 categories: CTF
 ---
 
-**🚧 site under construction 🚧**
 ![](images/score.png)
 didn't expect to get 2nd LOL
 
