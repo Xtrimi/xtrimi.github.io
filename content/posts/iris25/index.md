@@ -347,3 +347,8 @@ and that **the path `../flag` gets normalized into `/flag` first**, which bypass
 which means we just need to set our sub as **`..flag`**!
 ![](images/todo3.png)
 flag: `irisctf{per_tenant_databases_are_a_cool_concept_indeed}`
+
+# See also
+- grumpy: https://hackmd.io/@GrumpyC/H1ZVC3uI1x
+- pwoofy: https://pwoofy.me/IrisCTF_Writeups_2025/
+- azazo: https://azazazo.github.io/posts/irisctf25/
