@@ -18,7 +18,7 @@ params:
   description: "xtrimi's blog"
   keywords: [Blog, Portfolio, PaperMod]
   author: Me
-  images: ["<link or path of image for opengraph, twitter-cards>"]
+  images: ["img/icon.png"]
   DateFormat: "January 2, 2006"
   defaultTheme: dark # dark, light
   disableThemeToggle: true
