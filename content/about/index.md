@@ -19,4 +19,4 @@ aside from that, i have also contributed to puzzles in the main game (Room 57)
 ive developed some websites but all of them are school-related so i cant really share it here
 
 other things i also like/have done:\
-object shows, osu!, twow, roblox obbying, web riddles
+object shows (price tag my goat), osu!, twow, roblox obbying, web riddles
